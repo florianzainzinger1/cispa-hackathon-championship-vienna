@@ -1,0 +1,67 @@
+Traceback (most recent call last):
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/p/scratch/training2562/syed1/uv/python/cpython-3.12.12-linux-x86_64-gnu/lib/python3.12/socket.py", line 978, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -2] Name or service not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/urllib3/connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='leaderboard.2025.hackathon.sprintml.com', port=443): Failed to resolve 'leaderboard.2025.hackathon.sprintml.com' ([Errno -2] Name or service not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='leaderboard.2025.hackathon.sprintml.com', port=443): Max retries exceeded with url: /submit/watermark_removal (Caused by NameResolutionError("HTTPSConnection(host='leaderboard.2025.hackathon.sprintml.com', port=443): Failed to resolve 'leaderboard.2025.hackathon.sprintml.com' ([Errno -2] Name or service not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/submit.py", line 25, in <module>
+    response = requests.post(
+               ^^^^^^^^^^^^^^
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/requests/adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='leaderboard.2025.hackathon.sprintml.com', port=443): Max retries exceeded with url: /submit/watermark_removal (Caused by NameResolutionError("HTTPSConnection(host='leaderboard.2025.hackathon.sprintml.com', port=443): Failed to resolve 'leaderboard.2025.hackathon.sprintml.com' ([Errno -2] Name or service not known)"))
+srun: error: jrc0426: task 0: Exited with exit code 1

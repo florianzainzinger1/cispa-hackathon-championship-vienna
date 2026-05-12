@@ -1,0 +1,181 @@
+Checking gsplat installation...
+
+=========================================
+STARTING FULL PIPELINE WITH IMAGE-GS
+=========================================
+Time: Sun Dec 14 10:04:21 AM CET 2025
+Couldn't connect to the Hub: (MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /api/models/runwayml/stable-diffusion-v1-5 (Caused by NewConnectionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to establish a new connection: [Errno 113] No route to host"))'), '(Request ID: 277689eb-2042-4e33-be7e-58deb63e6955)').
+Will try to load from local cache.
+
+============================================================
+PIPELINE KONFIGURATION
+============================================================
+  ✗ OFF  1. Fast-Sand: iter=3, coverage=0.5
+  ✗ OFF  2. Image-GS: gaussians=10000
+  ✓ ON   3. Diffusion: strength=0.12, steps=20
+  ✓ ON   4. Rotation: angle=1.0°
+  ✗ OFF  5. Blur: σ=0.4
+  ✓ ON   6. Color-Fix: histogram matching
+
+  Max MSE: 0.08
+============================================================
+
+Aktive Schritte: ['diffusion', 'vae', 'rotation', 'jpeg', 'color_fix']
+
+============================================================
+DATASET LADEN
+============================================================
+Gefunden: 100 Bilder in Dataset
+
+============================================================
+MODELLE LADEN
+============================================================
+Preloading models...
+  Loading diffusion...
+    Loading Diffusion model on cuda...
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:06<00:31,  6.35s/it]Loading pipeline components...:  50%|█████     | 3/6 [00:52<00:55, 18.64s/it]Loading pipeline components...:  67%|██████▋   | 4/6 [00:57<00:28, 14.01s/it]Loading pipeline components...:  83%|████████▎ | 5/6 [00:57<00:09,  9.44s/it]Loading pipeline components...: 100%|██████████| 6/6 [00:57<00:00,  6.45s/it]Loading pipeline components...: 100%|██████████| 6/6 [00:57<00:00,  9.64s/it]
+You have disabled the safety checker for <class 'diffusers.pipelines.stable_diffusion.pipeline_stable_diffusion_img2img.StableDiffusionImg2ImgPipeline'> by passing `safety_checker=None`. Ensure that you abide to the conditions of the Stable Diffusion license and do not expose unfiltered results in services or applications open to the public. Both the diffusers team and Hugging Face strongly recommend to keep the safety filter enabled in all public facing circumstances, disabling it only for use-cases that involve analyzing network behavior or auditing its results. For more information, please have a look at https://github.com/huggingface/diffusers/pull/254 .
+  Loading vae...
+      Loading VAE...
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /stabilityai/sd-vae-ft-mse/resolve/main/config.json (Caused by NewConnectionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to establish a new connection: [Errno 113] No route to host"))'), '(Request ID: 67bc8fa8-1189-49ef-9ec9-f0b8283fd5f0)')' thrown while requesting HEAD https://huggingface.co/stabilityai/sd-vae-ft-mse/resolve/main/config.json
+Retrying in 1s [Retry 1/5].
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /stabilityai/sd-vae-ft-mse/resolve/main/config.json (Caused by NewConnectionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to establish a new connection: [Errno 113] No route to host"))'), '(Request ID: 5f86cedc-afab-4105-9e4c-d44be587ffeb)')' thrown while requesting HEAD https://huggingface.co/stabilityai/sd-vae-ft-mse/resolve/main/config.json
+Retrying in 2s [Retry 2/5].
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /stabilityai/sd-vae-ft-mse/resolve/main/config.json (Caused by NewConnectionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to establish a new connection: [Errno 113] No route to host"))'), '(Request ID: 1753f3d8-7b67-4c29-b77a-bb73ebc85832)')' thrown while requesting HEAD https://huggingface.co/stabilityai/sd-vae-ft-mse/resolve/main/config.json
+Retrying in 4s [Retry 3/5].
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /stabilityai/sd-vae-ft-mse/resolve/main/config.json (Caused by NewConnectionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to establish a new connection: [Errno 113] No route to host"))'), '(Request ID: 20a2c1fa-76b7-4134-9d01-bde03fe23c18)')' thrown while requesting HEAD https://huggingface.co/stabilityai/sd-vae-ft-mse/resolve/main/config.json
+Retrying in 8s [Retry 4/5].
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /stabilityai/sd-vae-ft-mse/resolve/main/config.json (Caused by NewConnectionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to establish a new connection: [Errno 113] No route to host"))'), '(Request ID: 9f9d13f9-c646-481f-88ca-6731f8f35314)')' thrown while requesting HEAD https://huggingface.co/stabilityai/sd-vae-ft-mse/resolve/main/config.json
+Retrying in 8s [Retry 5/5].
+'(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /stabilityai/sd-vae-ft-mse/resolve/main/config.json (Caused by NewConnectionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to establish a new connection: [Errno 113] No route to host"))'), '(Request ID: 58a77b7c-d46f-4442-9285-d66a91b5492b)')' thrown while requesting HEAD https://huggingface.co/stabilityai/sd-vae-ft-mse/resolve/main/config.json
+Traceback (most recent call last):
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+OSError: [Errno 113] No route to host
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/urllib3/connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/urllib3/connection.py", line 219, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: HTTPSConnection(host='huggingface.co', port=443): Failed to establish a new connection: [Errno 113] No route to host
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /stabilityai/sd-vae-ft-mse/resolve/main/config.json (Caused by NewConnectionError("HTTPSConnection(host='huggingface.co', port=443): Failed to establish a new connection: [Errno 113] No route to host"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1543, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1460, in get_hf_file_metadata
+    r = _request_wrapper(
+        ^^^^^^^^^^^^^^^^^
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 283, in _request_wrapper
+    response = _request_wrapper(
+               ^^^^^^^^^^^^^^^^^
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 306, in _request_wrapper
+    response = http_backoff(method=method, url=url, **params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 325, in http_backoff
+    raise err
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 306, in http_backoff
+    response = session.request(method=method, url=url, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 95, in send
+    return super().send(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/requests/adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: (MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /stabilityai/sd-vae-ft-mse/resolve/main/config.json (Caused by NewConnectionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to establish a new connection: [Errno 113] No route to host"))'), '(Request ID: 58a77b7c-d46f-4442-9285-d66a91b5492b)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/diffusers/configuration_utils.py", line 392, in load_config
+    config_file = hf_hub_download(
+                  ^^^^^^^^^^^^^^^^
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1007, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1114, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1658, in _raise_on_head_call_error
+    raise LocalEntryNotFoundError(
+huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/scripts/run_attack.py", line 227, in <module>
+    main()
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/scripts/run_attack.py", line 186, in main
+    pipeline.preload_models()
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/src/pipeline.py", line 51, in preload_models
+    step.load_model()
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/src/attacks/vae.py", line 29, in load_model
+    self._model = AutoencoderKL.from_pretrained(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/diffusers/models/modeling_utils.py", line 1062, in from_pretrained
+    config, unused_kwargs, commit_hash = cls.load_config(
+                                         ^^^^^^^^^^^^^^^^
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/p/project1/training2562/syed1/Hackathon/task_3_watermark_removal/.venv/lib/python3.12/site-packages/diffusers/configuration_utils.py", line 419, in load_config
+    raise EnvironmentError(
+OSError: stabilityai/sd-vae-ft-mse does not appear to have a file named config.json.
+
+=========================================
+PIPELINE COMPLETE
+Time: Sun Dec 14 10:06:46 AM CET 2025
+=========================================
+
+Submission file info:
+  images shape: (100, 512, 512, 3)
+  names count: 100
+  First 5 names: [  1  10 100  11  12]

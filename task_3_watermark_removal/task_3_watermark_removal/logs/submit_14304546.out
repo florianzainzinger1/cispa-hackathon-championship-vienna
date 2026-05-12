@@ -1,0 +1,9 @@
+Loading submission file...
+  Images shape: (100, 512, 512, 3)
+  Names count: 100
+  Sample names: ['1', '10', '100', '11', '12']
+
+Submitting to leaderboard server...
+  URL: http://35.192.205.84:80/submit/09-watermark-removal
+[ERROR] Network/HTTP error while submitting: HTTPConnectionPool(host='35.192.205.84', port=80): Max retries exceeded with url: /submit/09-watermark-removal (Caused by NewConnectionError("HTTPConnection(host='35.192.205.84', port=80): Failed to establish a new connection: [Errno 113] No route to host"))
+done!

@@ -1,0 +1,8 @@
+Loading submission file...
+  Images shape: (100, 512, 512, 3)
+  Names count: 100
+  Sample names: ['1', '10', '100', '11', '12']
+
+Submitting to leaderboard server...
+  URL: http://35.192.205.84:80/submit/09-watermark-removal
+done!
