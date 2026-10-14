@@ -1,28 +1,62 @@
-# CISPA European Cybersecurity and AI Hackathon Championship - Vienna
+# CISPA Hackathon Championship: Vienna Qualifier
 
-This repository documents my team's participation and victory at the Vienna stop of the CISPA European Cybersecurity and AI Hackathon Championship, held at the University of Vienna on December 13 and 14, 2025.
+Code of team **!!1337** at the Vienna round of the CISPA European Cybersecurity and AI
+Hackathon Championship (University of Vienna, December 13–14, 2025). The team was
+**one of the three winning teams** and qualified for the
+[Grand Finale](https://github.com/florianzainzinger1/cispa-hackathon-grand-finale-2026),
+where it finished 4th overall.
 
-## About the Event
+## About the event
 
-The CISPA European Cybersecurity and AI Hackathon Championship is a Europe-wide competition organized by the CISPA Helmholtz Center for Information Security, running from November 2025 to June 2026. Regional qualifying rounds are hosted in major European university cities, where Bachelor's and Master's students form teams of up to four to tackle challenges in artificial intelligence and cybersecurity over a 24-hour period. The winning teams from each region advance to the Grand Finale in St. Ingbert, Germany.
+The championship is a Europe-wide student competition organised by the CISPA Helmholtz
+Center for Information Security (SprintML Lab). In each regional round, teams of up to
+four Bachelor's and Master's students solve challenges in trustworthy AI and
+machine-learning security within 24 hours. Jobs run on the JURECA supercomputer
+(Jülich Supercomputing Centre), and every submission is scored on a hidden leaderboard.
+The Vienna round had almost 70 participants from Austria and Germany.
 
-The Vienna round was the second regional qualifier, following the launch event in Paris. Nearly 70 early-career researchers from Austria and Germany participated. The event was led by CISPA Faculty Dr. Adam Dziedzic and Dr. Franziska Boenisch, with the computational infrastructure provided by the Jülich Supercomputer Cluster.
+## Tasks and approaches
 
-## Tasks
+### 1. Dataset inference ([`task1_dataset_inference/`](task1_dataset_inference))
 
-Participants were given three challenges covering core problems in trustworthy artificial intelligence and machine learning security.
+Decide for 1,000 subsets of 100 images each whether they were part of the training data of a given
+ResNet-18 classifier (metric: TPR at 5% FPR).
 
-**1. Dataset Inference.** The task required determining whether a specific dataset had been used in the training of a given model, a problem closely related to data provenance and intellectual property protection in machine learning.
+Mean-based membership signals were too weak, because dropout regularised the model. The final attack
+uses **extreme-value features per subset** instead: the maximum NLL, the minimum logit
+margin and the 10th-percentile confidence. The hypothesis is that a model trained on a subset
+also handles that subset's hardest images better. This raised the leaderboard score from
+0.141 to 0.200.
 
-**2. Text Classification.** Participants designed and applied classification techniques to assigned textual data, with solutions evaluated against dedicated reference models.
+### 2. LLM text attribution ([`task2_text_attribution/`](task2_text_attribution))
 
-**3. Watermark Removal.** The task assessed the robustness of current image watermarking methods. Watermarks are imperceptible signals embedded in images to label model-generated content or to mark creative works by their authors. Given a set of watermarked images, the goal was to remove the watermark while the organizers measured how much of it remained detectable after the attack.
+Predict which LLM generated a given text (about 85k training samples).
 
-All submissions were assessed using dedicated evaluator models and the technical infrastructure prepared by the SprintML Lab.
+- TF-IDF baseline, then fine-tuned DeBERTa-v3 (base and large) and ModernBERT-large
+  classifiers trained on A100 GPUs via Slurm
+- Pseudo-labelling of the test set, test-time augmentation and a length-aware ensemble
+  of the models
 
-## Result
+### 3. Image watermark removal ([`task3_watermark_removal/`](task3_watermark_removal))
 
-Our team was selected as one of the three winning teams of the Vienna regional qualifier. As a result, we have been invited to compete in the Grand Finale of the CISPA European Cybersecurity and AI Hackathon Championship at CISPA in Saarland.
+Remove BitMark watermarks from 100 AI-generated images (512×512) while keeping the
+MSE to the original at or below 0.08 (metric: 1 − TPR at 1% FPR of the watermark detector).
+
+The solution is a modular attack pipeline: inpainting-based perturbation ("Fast-Sand"),
+re-rendering with 2D Gaussian splatting (Image-GS), diffusion img2img regeneration,
+small rotations, Gaussian blur and histogram-based colour correction.
+
+## Repository layout
+
+```
+task1_dataset_inference/   feature-based membership inference attack
+task2_text_attribution/    transformer classifiers, training + inference scripts, Slurm jobs
+task3_watermark_removal/   attack pipeline (src/attacks/*), runner scripts
+```
+
+The organisers' datasets, task descriptions, model checkpoints and submission files are
+not included. The code documents the approaches and needs the original challenge data to run.
+Some of the internal notes in the task folders are written in German.
 
 ## Reference
 

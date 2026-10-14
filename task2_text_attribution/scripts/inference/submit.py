@@ -7,7 +7,7 @@ import os
 import sys
 
 # --- CONFIG ---
-API_KEY = os.environ.get("API_KEY", "")
+API_KEY = os.environ.get("API_KEY", "")  # set via environment, never commit keys
 TASK_ID = "07-llm-attribution"
 BASE_URL = "http://<SUBMIT_SERVER>:80"
 

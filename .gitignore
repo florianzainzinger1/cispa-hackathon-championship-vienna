@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+logs/
+*.log
+*.out
+*.err
+
+# Organiser datasets, model checkpoints and submissions are not part of this repository
+*.csv
+*.pt
+*.npz
+*.joblib
+*.pdf

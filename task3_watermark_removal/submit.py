@@ -14,6 +14,7 @@ This version is robust:
 from __future__ import annotations
 
 from pathlib import Path
+import os
 import sys
 from typing import Any
 
@@ -25,7 +26,7 @@ import requests
 # CONFIGURATION
 # =========================
 
-API_KEY: str = os.environ.get("API_KEY", "")
+API_KEY: str = os.environ.get("API_KEY", "")  # set via environment, never commit keys
 SUBMIT_URL: str = "http://<SUBMIT_SERVER>:80/submit/09-watermark-removal"
 SUBMISSION_FILE: Path = Path(__file__).parent / "submission.npz"
 

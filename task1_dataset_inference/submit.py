@@ -11,7 +11,7 @@ import requests
 # ================================
 # CONFIGURATION - UPDATE THIS!
 # ================================
-API_KEY = os.environ.get("API_KEY", "")  # Team: !!1337
+API_KEY = os.environ.get("API_KEY", "")  # set via environment, never commit keys
 # ================================
 
 BASE_URL = "http://<SUBMIT_SERVER>:80"
@@ -24,9 +24,8 @@ def main():
                         help="Path to submission CSV file")
     args = parser.parse_args()
     FILE_PATH = args.submission
-    if API_KEY == "YOUR_API_KEY_HERE":
-        print("ERROR: Please set your API_KEY in submit.py!")
-        print("Edit the file and replace 'YOUR_API_KEY_HERE' with your team token.")
+    if not API_KEY:
+        print("ERROR: Please set the API_KEY environment variable.")
         sys.exit(1)
     
     if not os.path.isfile(FILE_PATH):

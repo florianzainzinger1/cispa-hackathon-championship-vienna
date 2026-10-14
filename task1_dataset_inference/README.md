@@ -1,7 +1,7 @@
 # Dataset Inference Attack - Aktueller Stand
 
 **Score: 0.200 (TPR @ FPR = 5%)**  
-**Datum: 14.12.2024**
+**Datum: 14.12.2025**
 
 ---
 
